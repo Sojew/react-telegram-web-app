@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Typography, Row, Col } from 'antd';
 import { PlusOutlined, MinusOutlined } from '@ant-design/icons';
-import useIncomeSourcesStore from './stores/storage'; // Make sure the path is correct
+import useIncomeSourcesStore from './stores/storage';
 import './index.css';
 
 const IncomeSources = () => {
@@ -64,7 +64,6 @@ const IncomeSources = () => {
           </Typography.Text>
         ) : (
           <>
-            {/* Render only enabled sources when not in editing mode */}
             {Object.entries(sourcesEnabled).map(([id, option]) => (
               <TextBar key={id} id={id} sourceHeader={option.sourceHeader} sourceBodyText={option.sourceBodyText} />
             ))}
@@ -73,7 +72,6 @@ const IncomeSources = () => {
                 Можно добавить:
               </Typography.Text>
             )}
-            {/* Render disabled sources when in editing mode */}
             {isEditing && Object.entries(sourcesDisabled).map(([id, option]) => (
               <TextBar key={id} id={id} sourceHeader={option.sourceHeader} sourceBodyText={option.sourceBodyText} />
             ))}
